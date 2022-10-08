@@ -14,16 +14,26 @@ function brainfuck(bfcode, bfinput){
 }
 
 function bfincrement(){
-	
+	if(bfmem[bfind] == 255){
+		console.log("Memory value overflow, setting memory index to 0");
+		bfmem[bfind] = 0;
+	} else {
+		bfmem[bfind] = bfmem[bfind] + 1;
+	}
 }
 
 function bfdecrement(){
-	
+	if(bfmem[bfind] == 255){
+		console.log("Memory value underflow, setting memory index to 255");
+		bfmem[bfind] = 0;
+	} else {
+		bfmem[bfind] = bfmem[bfind] - 1;
+	}
 }
 
 function bfright(){
 	if(bfind == 29999){
-		console.log("Memory reference overflow, setting memory index to 0")
+		console.log("Memory reference overflow, setting memory index to 0");
 		bfind = 0;
 	} else {
 		bfind = bfind + 1;
@@ -32,10 +42,10 @@ function bfright(){
 
 function bfleft(){
 	if(bfind == 0){
-		console.log("Memory reference underflow, setting memory index to 29999")
+		console.log("Memory reference underflow, setting memory index to 29999");
 		bfind = 29999;
 	} else {
-		bfind = bfind + 1;
+		bfind = bfind - 1;
 	}
 }
 

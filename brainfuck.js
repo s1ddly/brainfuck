@@ -6,6 +6,43 @@ Usage:
 	2a. Argument 1 is codeblock, this is a block of brainfuck code to execute, in string format.
 	2b. Argument 2 is the input for this codeblock, so far as a string, but will expand on this as the project evolves
 */
-function brainfuck(codeblock, input){
+var bfmem = Array(30000).fill(0);
+var bfind = 0;
+
+function brainfuck(bfcode, bfinput){
+	
+}
+
+function bfincrement(){
+	
+}
+
+function bfdecrement(){
+	
+}
+
+function bfright(){
+	if(bfind == 29999){
+		console.log("Memory reference overflow, setting memory index to 0")
+		bfind = 0;
+	} else {
+		bfind = bfind + 1;
+	}
+}
+
+function bfleft(){
+	if(bfind == 0){
+		console.log("Memory reference underflow, setting memory index to 29999")
+		bfind = 29999;
+	} else {
+		bfind = bfind + 1;
+	}
+}
+
+function bfinput(){
+	
+}
+
+function bfoutput(){
 	
 }

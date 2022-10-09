@@ -11,9 +11,14 @@ var bfind = 0;
 var bfout = [];
 
 function brainfuck(bfcode, bfinput){
+	bfmem = Array(30000).fill(0);
+	bfind = 0;
+	bfout = [];
 	bfstdin = bfinput.split("\n");
-	for(var bfcodeind = 0; bfcodeind++; bfcodeind < bfcode.length){
-		switch(bfmem[bfind]){
+	console.log("Starting brainfuck execution");
+	for(let bfcodeind = 0; bfcodeind < bfcode.length; bfcodeind++){
+		//console.log(bfcodeind);
+		switch(bfcode[bfcodeind]){
 			case "+":
 				bfincrement();
 				break;
@@ -34,8 +39,8 @@ function brainfuck(bfcode, bfinput){
 				break;
 		}
 	}
-	//console.log(bfout);
-	bfoutput();
+	console.log(bfout);
+	bfstdout();
 }
 
 function bfincrement(){
@@ -92,7 +97,7 @@ function bfloop(){
 	
 }
 
-function bfoutput(){
+function bfstdout(){
 	let bfoutputstring = String.fromCharCode(bfout);
 	console.log("OUTPUT: " + bfoutputstring);
 }

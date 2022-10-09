@@ -10,7 +10,7 @@ var bfmem = Array(30000).fill(0);
 var bfind = 0;
 var bfout = [];
 
-function brainfuck(bfcode, bfinput){
+function brainfuck(bfcode, bfinput, bfasciiout = true){
 	bfmem = Array(30000).fill(0);
 	bfind = 0;
 	bfout = [];
@@ -40,7 +40,7 @@ function brainfuck(bfcode, bfinput){
 		}
 	}
 	console.log(bfout);
-	bfstdout();
+	bfstdout(bfasciiout);
 }
 
 function bfincrement(){
@@ -97,7 +97,19 @@ function bfloop(){
 	
 }
 
-function bfstdout(){
-	let bfoutputstring = String.fromCharCode(bfout);
-	console.log("OUTPUT: " + bfoutputstring);
+function bfstdout(bfasciiout){
+	//let bfoutputstring = String.fromCharCode(bfout);
+	//console.log("OUTPUT: " + bfoutputstring);
+	if(bfasciiout){
+		bfoutstr = "";
+		var bfoutarr = [];
+		for(let outputind = 0; outputind < bfout.length; outputind++){
+			bfoutarr.push(String.fromCharCode(bfout[outputind]));
+		}
+		var bfoutstr = bfoutarr.join("");
+		console.log("OUTPUT(ASCII): " + bfoutstr);
+	} else {
+		var bfoutstr = bfout.join(",");
+		console.log("OUTPUT(int): " + bfoutstr);
+	}
 }

@@ -105,12 +105,8 @@ function bfoutput(){
 function bfloop(bfmin, bfmax){
 	var exitind = null;
 	var bfiterator = bfmin + 1;
-	console.log("startingbfloop");
 	while(bfmem[bfind] != 0){
 		for(let bfiterator = bfmin + 1; bfiterator < bfmax; bfiterator++){
-			console.log(bfiterator)
-			console.log(bfmem[bfind])
-			console.log(bfcode[bfiterator])
 			if (bfcode[bfiterator] == "+"){
 				bfincrement();
 			} else if (bfcode[bfiterator] == "-"){
@@ -131,93 +127,6 @@ function bfloop(bfmin, bfmax){
 				break;
 			}
 		}
-		//debugger;
-		//loopcount = loopcount + 1;
-		//console.log(loopcount);
-		/*if (bfcode[bfiterator] == "+"){
-			bfincrement();
-			bfiterator++;
-		} else if (bfcode[bfiterator] == "-"){
-			bfdecrement();
-			bfiterator++;
-		} else if (bfcode[bfiterator] == ">"){
-			bfright();
-			bfiterator++;
-		} else if (bfcode[bfiterator] == "<"){
-			bfleft();
-			bfiterator++;
-		} else if (bfcode[bfiterator] == "."){
-			bfoutput();
-			bfiterator++;
-		} else if (bfcode[bfiterator] == ","){
-			bfinput();
-			bfiterator++;
-		} else if (bfcode[bfiterator] == "["){
-			bfiterator = bfloop(bfiterator, bfcode.length);
-		} else if (bfcode[bfiterator] == "]"){
-			//exitind = bfiterator + 1;
-			if(bfmem[bfind] == 0){
-				break;
-			} else {
-				exitind = bfiterator + 1;
-				bfiterator = bfmin + 1;
-			}
-		}*/
-		/*for(let bfiterator = bfmin + 1; bfiterator < bfmax; bfiterator++){
-			//debugger;
-			console.log(bfiterator)
-			console.log(bfmem[bfmin])
-			if(bfcode[bfiterator] == "+"){
-				
-			} else if (bfcode[bfiterator] == "+"){
-				bfincrement();
-			} else if (bfcode[bfiterator] == "-"){
-				bfdecrement();
-			} else if (bfcode[bfiterator] == ">"){
-				bfright();
-			} else if (bfcode[bfiterator] == "<"){
-				bfleft();
-			} else if (bfcode[bfiterator] == "."){
-				bfoutput();
-			} else if (bfcode[bfiterator] == ","){
-				bfinput();
-			} else if (bfcode[bfiterator] == "["){
-				bfiterator = bfloop(bfiterator, bfcode.length);
-			} else if (bfcode[bfiterator] == "]"){
-				exitind = bfiterator + 1;
-				debugger;
-				break;
-			}
-			/*switch(bfcode[bfiterator]){
-				case "+":
-					bfincrement();
-					break;
-				case "-":
-					bfdecrement();
-					break;
-				case ">":
-					bfright();
-					break;
-				case "<":
-					bfleft();
-					break;
-				case ".":
-					bfoutput();
-					break;
-				case ",":
-					bfinput();
-					break;
-				case "[":
-					bfiterator = bfloop(bfiterator + 1, bfcode.length);
-					break;
-				case "]":
-					exitind = bfiterator;
-					break;
-			}
-			if(exitind != null || bfmem[bfmin] == 0){
-				break;
-			}
-		}*/
 	}
 	return exitind;
 }

@@ -13,9 +13,29 @@ var bfout = [];
 function brainfuck(bfcode, bfinput){
 	bfstdin = bfinput.split("\n");
 	for(var bfcodeind = 0; bfcodeind++; bfcodeind < bfcode.length){
-		
+		switch(bfmem[bfind]){
+			case "+":
+				bfincrement();
+				break;
+			case "-":
+				bfdecrement();
+				break;
+			case ">":
+				bfright();
+				break;
+			case "<":
+				bfleft();
+				break;
+			case ".":
+				bfoutput();
+				break;
+			case ",":
+				bfinput();
+				break;
+		}
 	}
-	console.log(bfout);
+	//console.log(bfout);
+	bfoutput();
 }
 
 function bfincrement(){
@@ -73,5 +93,6 @@ function bfloop(){
 }
 
 function bfoutput(){
-	
+	let bfoutputstring = String.fromCharCode(bfout);
+	console.log("OUTPUT: " + bfoutputstring);
 }

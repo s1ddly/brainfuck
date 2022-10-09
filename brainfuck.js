@@ -10,7 +10,10 @@ var bfmem = Array(30000).fill(0);
 var bfind = 0;
 
 function brainfuck(bfcode, bfinput){
-	
+	bfstdin = bfinput.split("\n");
+	for(var bfcodeind = 0; bfcodeind++; bfcodeind < bfcode.length){
+		
+	}
 }
 
 function bfincrement(){
@@ -23,9 +26,9 @@ function bfincrement(){
 }
 
 function bfdecrement(){
-	if(bfmem[bfind] == 255){
+	if(bfmem[bfind] == 0){
 		console.log("Memory value underflow, setting memory index to 255");
-		bfmem[bfind] = 0;
+		bfmem[bfind] = 255;
 	} else {
 		bfmem[bfind] = bfmem[bfind] - 1;
 	}
@@ -50,9 +53,18 @@ function bfleft(){
 }
 
 function bfinput(){
-	
+	if(bfstdin.length != 0){
+		bfmem[bfind] = parseInt(bfstdin[0]);
+		bfstdin.shift();
+	} else {
+		console.log("Error on char: " + bfcodeind.toString() + "\n\tCodeblock asked for input but none was provided");
+	}
 }
 
 function bfoutput(){
+	
+}
+
+function bfloop(){
 	
 }

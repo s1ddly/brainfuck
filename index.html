@@ -11,7 +11,25 @@
         <!-- Bootstrap icons-->
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-		<script src="brainfuck.js"></script>
+		<script src="js/brainfuck.js"></script>
+		<script type="text/javascript">
+			function runbf(){
+				var webCode = document.getElementById("bfcode").value;
+				var webInput = document.getElementById("bfinput").value;
+				var webFormat = document.getElementById("bfselect").value;
+				var webOutput = document.getElementById("bfoutput");
+				if (webFormat == "ASCII"){
+					webOutput.innerText = brainfuck(webCode, webInput, true);
+				} else {
+					webOutput.innerText = brainfuck(webCode, webInput, false);
+				}
+				//console.log(webCode);
+				//console.log(webInput);
+				//console.log(webFormat);
+				//console.log(webOutput);
+				//webOutput.innerText = brainfuck();
+			}
+		</script>
     </head>
     <body>
         <!-- Navigation-->
@@ -44,19 +62,21 @@
                         <h1 class="display-5 fw-bolder">Brainfuck Code</h1>
 						<ul>
 							<li><p>Please enter your brainfuck code and input on the right.</p></li>
-							<li><p>For input, each line represents a new input, so 3 inputs may look like 1\n2\n\3.</p></li>
-							<li><p>Finally, select whether input/output is represented in ascii or numbers.</p></li>
+							<li><p>For input, each line represents a new input, so 3 inputs may look like 1\n2\n3. Input needs to be a number between 0 and 255</p></li>
+							<li><p>Finally, select whether output is represented in ascii or numbers.</p></li>
 							
 						</ul>
                         <div class="d-flex">
-							<select class="form-control" id="exampleFormControlSelect1" style="width: 50%;">
+							<select class="form-control" id="bfselect" style="width: 50%;">
 								<option>ASCII</option>
 								<option>Number</option>
 							</select>
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                            <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="runbf();">
                                 Run!
                             </button>
                         </div>
+						<p><br>Output:</p>
+						<p id="bfoutput"></p>
                     </div>
                 </div>
             </div>

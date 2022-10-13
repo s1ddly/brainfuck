@@ -48,8 +48,7 @@ function brainfuck(bfincode, bfin, bfasciiout = true){
 				break;
 		}
 	}
-	console.log(bfout);
-	bfstdout(bfasciiout);
+	return bfstdout(bfasciiout);
 }
 
 function bfincrement(){
@@ -142,8 +141,10 @@ function bfstdout(bfasciiout){
 		}
 		var bfoutstr = bfoutarr.join("");
 		console.log("OUTPUT(ASCII): " + bfoutstr);
+		return bfoutstr;
 	} else {
 		var bfoutstr = bfout.join(",");
 		console.log("OUTPUT(int): " + bfoutstr);
+		return bfoutstr;
 	}
 }

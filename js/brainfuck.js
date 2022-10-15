@@ -5,6 +5,7 @@ Usage:
 2. Call the brainfuck function with the 2 arguments
 	2a. Argument 1 is codeblock, this is a block of brainfuck code to execute, in string format.
 	2b. Argument 2 is the input for this codeblock, so far as a multi line string consisting of 1 byte unsigned ints(0-255) separated by new line characters, but will expand on this as the project evolves
+	2c. Argument 3 is whether or not the output is rendered as a number or ASCII, true = ascii output, false = number output
 */
 var bfmem = Array(30000).fill(0);
 var bfind = 0;

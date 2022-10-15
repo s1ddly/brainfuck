@@ -131,8 +131,6 @@ function bfloop(bfmin, bfmax){
 }
 
 function bfstdout(bfasciiout){
-	//let bfoutputstring = String.fromCharCode(bfout);
-	//console.log("OUTPUT: " + bfoutputstring);
 	if(bfasciiout){
 		bfoutstr = "";
 		var bfoutarr = [];

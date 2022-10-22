@@ -1,0 +1,7 @@
+#!/bin/bash
+# Brainfuck interperter written in bash
+# Usage
+# Run the script passing 3 arguments
+#  1. Codeblock file which contains the brainfuck code to be executed
+#  2. Input file which contains the input(stored as comma separate numbers ranginf from 0-255)
+#  3. -a flag, if this exists then the output will be rendered as ASCII characters

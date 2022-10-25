@@ -5,3 +5,21 @@
 #  1. Codeblock file which contains the brainfuck code to be executed
 #  2. Input file which contains the input(stored as comma separate numbers ranginf from 0-255)
 #  3. -a flag, if this exists then the output will be rendered as ASCII characters
+
+
+# Initialise Variables
+# Memory 
+bfmem=();
+for fillval in {0..30000};
+do
+	$bfmem+=($fillval);
+done
+
+# Index
+bfind=0;
+
+# Output
+bfoutput=();
+
+# Code Input
+bfcode="";

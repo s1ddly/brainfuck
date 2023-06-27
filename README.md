@@ -1,2 +1,2 @@
 # brainfuck
-I wrote a interpeter compiler in js
+I wrote a brainfuck interpeter in js

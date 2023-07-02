@@ -63,11 +63,11 @@
 						</form>
 					</div>
                     <div class="col-md-6">
-                        <h1 class="display-5 fw-bolder">Brainfuck Code</h1>
+                        <h1 class="display-5 fw-bolder">Brainfuck Shell</h1>
 						<ul>
-							<li><p>Please enter your brainfuck code and input on the left.</p></li>
-							<li><p>For input, each line represents a new input, so 3 inputs may look like 1\n2\n3. Input needs to be a number between 0 and 255</p></li>
-							<li><p>Finally, select whether output is represented in ascii or numbers.</p></li>
+							<li><p>Please enter your brainfuck commands.</p></li>
+							<li><p>This is a shell, it will display your past commands and output.</p></li>
+							<li><p>Select whether output is represented in ascii characters or numbers below.</p></li>
 							
 						</ul>
                         <div class="d-flex">
@@ -76,7 +76,11 @@
 								<option>Number</option>
 							</select>
                         </div>
-						<p><br>Output:</p>
+						<br>
+						<div class="d-flex">
+							<label for="bfdebug">Debug:&nbsp;</label><br>
+							<input type="checkbox" id="bfdebug" name="bfdebug" value="debug"></input>
+						</div>
 						<p id="bfoutput"></p>
                     </div>
                 </div>

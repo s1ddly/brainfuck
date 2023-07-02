@@ -14,14 +14,14 @@
 		<script src="js/brainfuck.js"></script>
 		<script type="text/javascript">
 			function runbf(){
-				var webCode = document.getElementById("bfcode").value;
-				var webInput = document.getElementById("bfinput").value;
+				var webCode = document.getElementById("bfshellin").value;
+				//var webInput = document.getElementById("bfinput").value;
 				var webFormat = document.getElementById("bfselect").value;
-				var webOutput = document.getElementById("bfoutput");
+				var webOutput = document.getElementById("bfshellout");
 				if (webFormat == "ASCII"){
-					webOutput.innerText = brainfuck(webCode, webInput, true);
+					webOutput.innerText = webOutput.innerText + "\n" + brainfuck(webCode, null, true);
 				} else {
-					webOutput.innerText = brainfuck(webCode, webInput, false);
+					webOutput.innerText = webOutput.innerText + "\n" + brainfuck(webCode, null, false);
 				}
 			}
 		</script>
@@ -51,7 +51,7 @@
 						<textarea style='height: 400px;width: 100%' id="bfshellout" readonly> </textarea>
 						<div class="d-flex">
 							<input type="text" style='width: 80%' id="bfshellin"> </input>
-							<button class="btn btn-outline-dark" style='width: 20%' id="bfsubmit" onclick="">Submit</button>
+							<button class="btn btn-outline-dark" style='width: 20%' id="bfsubmit" onclick="runbf()">Submit</button>
 						</div>
 					</div>
                     <div class="col-md-6">

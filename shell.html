@@ -25,6 +25,15 @@
 					webOutput.value += brainfuck(webCode, null, false) + "\n";
 				}
 				document.getElementById("bfshellin").value = "";
+				if (document.getElementById("bfdebug").checked){
+					debugOutput = bfdebug();
+					displayText = "Current Index: " + bfind + "\n";
+					displayText += "Non-Zero memory indexes:\n";
+					for (var debugIndex in debugOutput){
+						displayText += "Index: " + debugIndex + ", Value: " + debugOutput[debugIndex] + "\n";
+					}
+					document.getElementById("bfdebugoutput").innerText = displayText;
+				}
 			}
 			
 			function init(){
@@ -81,7 +90,7 @@
 							<label for="bfdebug">Debug:&nbsp;</label><br>
 							<input type="checkbox" id="bfdebug" name="bfdebug" value="debug"></input>
 						</div>
-						<p id="bfoutput"></p>
+						<p id="bfdebugoutput"></p>
                     </div>
                 </div>
             </div>

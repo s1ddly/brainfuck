@@ -18,6 +18,13 @@ function bfinit(){
 	bfout = [];
 }
 
+function bfdebug(){
+	
+	for (refiterator = 0; refiterator < bfmem.length; refiterator++){
+		
+	}
+}
+
 function brainfuck(bfincode, bfin, bfasciiout = true){
 	bfout = [];
 	bfcode = bfincode;

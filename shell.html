@@ -28,7 +28,6 @@
 				if (document.getElementById("bfdebug").checked){
 					debugOutput = bfdebug();
 					displayText = "Current Index: " + bfind + "\n";
-					displayText += "Non-Zero memory indexes:\n";
 					for (var debugIndex in debugOutput){
 						displayText += "Index: " + debugIndex + ", Value: " + debugOutput[debugIndex] + "\n";
 					}
@@ -62,7 +61,7 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6">
-						<p class="lead">Shell:</p>
+						<p class="lead"><b>Shell:</b></p>
 						<textarea style='height: 400px;width: 100%' id="bfshellout" readonly> </textarea>
 						<form action="javascript:runbf()">
 						<div class="d-flex">
@@ -75,7 +74,7 @@
                         <h1 class="display-5 fw-bolder">Brainfuck Shell</h1>
 						<ul>
 							<li><p>Please enter your brainfuck commands.</p></li>
-							<li><p>This is a shell, it will display your past commands and output.</p></li>
+							<li><p>Use the debug option to view current index and indexes with non zero values</p></li>
 							<li><p>Select whether output is represented in ascii characters or numbers below.</p></li>
 							
 						</ul>

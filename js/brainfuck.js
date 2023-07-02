@@ -19,6 +19,7 @@ function bfinit(){
 }
 
 function brainfuck(bfincode, bfin, bfasciiout = true){
+	bfout = [];
 	bfcode = bfincode;
 	if(bfin != null){
 		bfstdin = bfin.split("\n");
@@ -145,6 +146,7 @@ function bfstdout(bfasciiout){
 		console.log("OUTPUT(ASCII): " + bfoutstr);
 		return bfoutstr;
 	} else {
+		bfoutstr = "";
 		var bfoutstr = bfout.join(",");
 		console.log("OUTPUT(int): " + bfoutstr);
 		return bfoutstr;

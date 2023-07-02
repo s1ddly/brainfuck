@@ -15,18 +15,24 @@
 		<script type="text/javascript">
 			function runbf(){
 				var webCode = document.getElementById("bfshellin").value;
-				//var webInput = document.getElementById("bfinput").value;
 				var webFormat = document.getElementById("bfselect").value;
 				var webOutput = document.getElementById("bfshellout");
 				if (webFormat == "ASCII"){
-					webOutput.innerText = webOutput.innerText + "\n" + brainfuck(webCode, null, true);
+					webOutput.value += webCode + "\n";
+					webOutput.value += brainfuck(webCode, null, true) + "\n";
 				} else {
-					webOutput.innerText = webOutput.innerText + "\n" + brainfuck(webCode, null, false);
+					webOutput.value += webCode + "\n";
+					webOutput.value += brainfuck(webCode, null, false) + "\n";
 				}
+				document.getElementById("bfshellin").value = "";
+			}
+			
+			function init(){
+				document.getElementById("bfshellout").value = "";
 			}
 		</script>
     </head>
-    <body>
+    <body onload="init()">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
             <div class="container px-4 px-lg-5">
@@ -49,10 +55,12 @@
                     <div class="col-md-6">
 						<p class="lead">Shell:</p>
 						<textarea style='height: 400px;width: 100%' id="bfshellout" readonly> </textarea>
+						<form action="javascript:runbf()">
 						<div class="d-flex">
 							<input type="text" style='width: 80%' id="bfshellin"> </input>
-							<button class="btn btn-outline-dark" style='width: 20%' id="bfsubmit" onclick="runbf()">Submit</button>
+							<button class="btn btn-outline-dark" style='width: 20%' id="bfsubmit">Submit</button>
 						</div>
+						</form>
 					</div>
                     <div class="col-md-6">
                         <h1 class="display-5 fw-bolder">Brainfuck Code</h1>
@@ -67,9 +75,6 @@
 								<option>ASCII</option>
 								<option>Number</option>
 							</select>
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="runbf();">
-                                Run!
-                            </button>
                         </div>
 						<p><br>Output:</p>
 						<p id="bfoutput"></p>

@@ -18,6 +18,7 @@
 				var webInput = document.getElementById("bfinput").value;
 				var webFormat = document.getElementById("bfselect").value;
 				var webOutput = document.getElementById("bfoutput");
+				bfinit();
 				if (webFormat == "ASCII"){
 					webOutput.innerText = brainfuck(webCode, webInput, true);
 				} else {

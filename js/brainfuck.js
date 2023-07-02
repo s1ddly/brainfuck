@@ -19,10 +19,13 @@ function bfinit(){
 }
 
 function bfdebug(){
-	
+	debugout = { };
 	for (refiterator = 0; refiterator < bfmem.length; refiterator++){
-		
+		if (bfmem[refiterator] != 0){
+			debugout[refiterator] = bfmem[refiterator];
+		}
 	}
+	return debugout;
 }
 
 function brainfuck(bfincode, bfin, bfasciiout = true){

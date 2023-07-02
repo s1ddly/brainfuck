@@ -12,10 +12,13 @@ var bfind = 0;
 var bfout = [];
 var bfcode = "";
 
-function brainfuck(bfincode, bfin, bfasciiout = true){
+function bfinit(){
 	bfmem = Array(30000).fill(0);
 	bfind = 0;
 	bfout = [];
+}
+
+function brainfuck(bfincode, bfin, bfasciiout = true){
 	bfcode = bfincode;
 	if(bfin != null){
 		bfstdin = bfin.split("\n");

@@ -104,7 +104,7 @@ function bfleft(){
 
 function bfinput(bfisshell){
 	if (bfisshell){
-		
+		bfmem[bfind] = prompt("Enter input");
 	} else {
 		if(bfstdin.length != 0){
 			bfmem[bfind] = parseInt(bfstdin[0]);
@@ -114,7 +114,6 @@ function bfinput(bfisshell){
 			throw "Input Error";
 		}
 	}
-	
 }
 
 function bfoutput(){

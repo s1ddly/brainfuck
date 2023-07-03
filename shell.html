@@ -19,10 +19,10 @@
 				var webOutput = document.getElementById("bfshellout");
 				if (webFormat == "ASCII"){
 					webOutput.value += webCode + "\n";
-					webOutput.value += brainfuck(webCode, null, true) + "\n";
+					webOutput.value += brainfuck(webCode, null, true, true) + "\n";
 				} else {
 					webOutput.value += webCode + "\n";
-					webOutput.value += brainfuck(webCode, null, false) + "\n";
+					webOutput.value += brainfuck(webCode, null, false, true) + "\n";
 				}
 				document.getElementById("bfshellin").value = "";
 				if (document.getElementById("bfdebug").checked){

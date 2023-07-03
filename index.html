@@ -20,9 +20,9 @@
 				var webOutput = document.getElementById("bfoutput");
 				bfinit();
 				if (webFormat == "ASCII"){
-					webOutput.innerText = brainfuck(webCode, webInput, true);
+					webOutput.innerText = brainfuck(webCode, webInput, true, false);
 				} else {
-					webOutput.innerText = brainfuck(webCode, webInput, false);
+					webOutput.innerText = brainfuck(webCode, webInput, false, false);
 				}
 			}
 			

@@ -107,7 +107,7 @@ function bfinput(){
 		bfmem[bfind] = parseInt(bfstdin[0]);
 		bfstdin.shift();
 	} else {
-		console.log("ERROR: Codeblock asked for input on char: " + bfcodeind.toString() + ", but none was provided");
+		console.log("ERROR: Codeblock asked for input but none was provided");
 		throw "Input Error";
 	}
 }

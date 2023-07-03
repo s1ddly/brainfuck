@@ -28,7 +28,7 @@ function bfdebug(){
 	return debugout;
 }
 
-function brainfuck(bfincode, bfin, bfasciiout = true){
+function brainfuck(bfincode, bfin, bfasciiout = true, bfisshell = false){
 	bfout = [];
 	bfcode = bfincode;
 	if(bfin != null){
@@ -56,7 +56,7 @@ function brainfuck(bfincode, bfin, bfasciiout = true){
 				bfoutput();
 				break;
 			case ",":
-				bfinput();
+				bfinput(bfisshell);
 				break;
 			case "[":
 				bfcodeind = bfloop(bfcodeind, bfcode.length);
@@ -102,14 +102,19 @@ function bfleft(){
 	}
 }
 
-function bfinput(){
-	if(bfstdin.length != 0){
-		bfmem[bfind] = parseInt(bfstdin[0]);
-		bfstdin.shift();
+function bfinput(bfisshell){
+	if (bfisshell){
+		
 	} else {
-		console.log("ERROR: Codeblock asked for input but none was provided");
-		throw "Input Error";
+		if(bfstdin.length != 0){
+			bfmem[bfind] = parseInt(bfstdin[0]);
+			bfstdin.shift();
+		} else {
+			console.log("ERROR: Codeblock asked for input but none was provided");
+			throw "Input Error";
+		}
 	}
+	
 }
 
 function bfoutput(){
